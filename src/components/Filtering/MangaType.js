@@ -10,9 +10,9 @@ const MangaType = ({ selectedType, onTypeChange }) => {
   ];
 
   return (
-    <div className="relative w-20 lg:w-[150px]">
+    <div className=" relative w-full lg:w-[150px]">
       <div
-        className="p-2 rounded-lg bg-[#2e236c] font-semibold text-white cursor-pointer text-center whitespace-nowrap"
+        className="p-2 rounded-lg bg-[#2e236c] font-semibold text-white cursor-pointer lg:text-center whitespace-nowrap"
         onClick={() => setIsOpen(!isOpen)}
       >
         {option.find((opt) => opt.id === selectedType)?.name || "Select Type"}

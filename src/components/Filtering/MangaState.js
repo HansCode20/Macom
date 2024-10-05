@@ -12,10 +12,9 @@ const MangaState = ({ selectedState, onStateChange }) => {
 
 
   return (
-    <div>
-         <div className="relative w-[110px] md:w-40 lg:w-[150px]">
+    <div className="relative w-full lg:w-[150px]">
       <div
-        className="p-2 rounded-lg bg-[#2e236c] font-semibold text-white cursor-pointer text-center whitespace-nowrap"
+        className="p-2 rounded-lg bg-[#2e236c] font-semibold text-white cursor-pointer lg:text-center whitespace-nowrap"
         onClick={() => setIsOpen(!isOpen)}
       >
         {option.find((opt) => opt.id === selectedState)?.name || "Select state"}
@@ -38,8 +37,7 @@ const MangaState = ({ selectedState, onStateChange }) => {
         </ul>
       )}
     </div>
-    </div>
-  )
-}
+  );
+};
 
 export default MangaState
