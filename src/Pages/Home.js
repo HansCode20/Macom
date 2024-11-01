@@ -1,12 +1,10 @@
 import React from "react";
-import Filter from "../components/Filtering/Filter";
-
+import Filter from "../components/Manga/Filter";
 
 export default function Home() {
   return (
-    <div >
+    <div>
       <Filter />
     </div>
-    
   );
 }

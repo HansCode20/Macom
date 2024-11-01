@@ -1,11 +1,11 @@
 import React from "react";
 import { FaChevronRight, FaChevronLeft } from "react-icons/fa";
 
-const PaginationControls = ({currentPage, totalPages, handlePageChange}) => {
+const PaginationControlsBatch = ({currentPage, totalPages, onPageChange}) => {
     return (
         <div className="flex items-center justify-center space-x-4">
           <button
-            onClick={() => handlePageChange(currentPage - 1)}
+            onClick={() => onPageChange(currentPage - 1)}
             disabled={currentPage === 1}
             className="bg-white p-3 rounded-md shadow-md "
           >
@@ -18,7 +18,7 @@ const PaginationControls = ({currentPage, totalPages, handlePageChange}) => {
           </span>
   
           <button
-            onClick={() => handlePageChange(currentPage + 1)}
+            onClick={() => onPageChange(currentPage + 1)}
             disabled={currentPage === totalPages}
             className="bg-white p-3 rounded-lg shadow-md"
           >
@@ -29,4 +29,4 @@ const PaginationControls = ({currentPage, totalPages, handlePageChange}) => {
       );
 }
 
-export default PaginationControls;
+export default PaginationControlsBatch;
