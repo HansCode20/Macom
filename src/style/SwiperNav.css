@@ -1,0 +1,21 @@
+/* Warna dan gaya default tombol navigasi */
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #ffffff !important; /* Warna panah */
+  font-size: 1rem !important;
+  background-color: rgba(0, 0, 0, 0.5); /* Latar belakang semi transparan */
+  padding: 30px;
+  border-radius: 100%; /* Bentuk lingkaran */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 1rem !important;
+}
+
+

@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;  
+
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+Style for the scrollbar
+*::-webkit-scrollbar {
+  width: 20px; /* Width of the scrollbar */
+  height: 10px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #666577; /* Color of the scrollbar thumb */
+  border-radius: 4px; /* Rounded corners of the thumb */
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: #3b3575; /* Color of the scrollbar thumb on hover */
+}
+
+*::-webkit-scrollbar-track {
+  background: #393737; /* Color of the track */
+  border-radius: 4px; /* Rounded corners of the track */
+}
+
+/* Menghilangkan Arrow select */
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.tooltip-container {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip-container .tooltip-text {
+    visibility: hidden;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%; /* Posisi tooltip di atas teks */
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip-container:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Navigation For Swiper */
+
