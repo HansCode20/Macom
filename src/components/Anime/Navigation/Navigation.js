@@ -12,14 +12,29 @@ const Navigation = () => {
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
+
+  useEffect(() => {
+    const savedActiveTab = localStorage.getItem('activeTab');
+    if (savedActiveTab) {
+      setActiveTab(savedActiveTab);
+    } else {
+      setActiveTab('Home');
+      navigate('/anime');
+    }
+  }, [navigate])
+
   const activeTabHandler = (category) => {
     setActiveTab(category);
     localStorage.setItem('activeTab', category); // Simpan ke localStorage
+    if (category === 'Home') {
+      navigate('/anime');
+    }
   };
 
   const handleSearch = (searchQuery) => {
     if (searchQuery) {
       navigate(`/anime/search?query=${searchQuery}`);
+      setIsOpen(false);
     }
   };
 
@@ -28,7 +43,6 @@ const Navigation = () => {
     { category: "Anime List", link: "/anime/anime-list" },
     { category: "On-going Anime", link: "/anime/on-going" },
     { category: "Completed Anime", link: "/anime/completed" },
-    { category: "Genre List", link: "/anime/genres" }
   ];
 
   useEffect(() => {
@@ -45,7 +59,7 @@ const Navigation = () => {
   return (
         <div 
          className={`fixed z-50 top-0 left-0 right-0 flex flex-wrap justify-between md:justify-center lg:justify-evenly items-center mx-auto p-5 gap-3
-         ${isScrolled ? 'bg-black' : 'bg-opacity-0'}
+         ${isScrolled  || isOpen ? 'bg-black' : 'md:bg-opacity-0 lg:bg-opacity-0'} 
          `}
         >
 
@@ -67,16 +81,16 @@ const Navigation = () => {
               <div className='block md:hidden lg:hidden w-full'>
                <Search onSearch={handleSearch} />
               </div>
-              {CategoryTab.map((item, index) => (
-                <Link
-                key={index}
-                to={item.link}
-                className={`font-semibold text-gray-400 ${activeTab === item.category ? 'text-white' : ''}`}
-                onClick={() => activeTabHandler(item.category)}
-                >
-                {item.category}
-                </Link>
-              ))}
+                {CategoryTab.map((item, index) => (
+                  <Link
+                  key={index}
+                  to={item.link}
+                  className={`font-semibold  ${activeTab === item.category ? 'text-white' : 'text-gray-400'}`}
+                  onClick={() => activeTabHandler(item.category)}
+                  >
+                  {item.category}
+                  </Link>
+                ))}
             </div>
           </div>
 

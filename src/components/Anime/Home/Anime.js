@@ -3,11 +3,12 @@ import { useNavigate } from "react-router-dom";
 import { getAnimeHome } from "../../../utils/AnimeApi";
 import BannerAnime from "../Banner/BannerAnime";
 import RecentAnime from "./RecentAnime";
-import MovieAnime from "./MovieAnime";
+import MovieAnime from "../Movie/MovieAnime";
 import Schedule from "../Schedule/Schedule";
-import BatchAnime from "./BatchAnime";
+import BatchAnime from "../Batch/BatchAnime";
 import "../../../style/LoaderDetails.css";
 import PopularAnime from "../Popular/PopularAnime";
+import GenreList from "../Genre List/GenreList";
 
 const Anime = () => {
   const navigate = useNavigate();
@@ -42,7 +43,7 @@ const Anime = () => {
   if (loading) {
     return (
       <div className="loadingtext flex justify-center items-center h-screen">
-        <p>Loading..</p>
+        <p>Loading</p>
       </div>
     );
   }
@@ -71,7 +72,7 @@ const Anime = () => {
           <BannerAnime BannerAnime={bannerAnime} />
         </div>
 
-        <div className="container mx-auto p-4 space-y-20">
+        <div className="container mx-auto p-4 space-y-20 mt-[-50px]">
           <div className="space-y-5">
             <h1 className="text-3xl">Latest Anime</h1>
             <RecentAnime recentAnime={recentAnime} />
@@ -111,6 +112,10 @@ const Anime = () => {
               </button>
             </div>
             <BatchAnime batchAnime={batchAnime} />
+          </div>
+
+          <div>
+            <GenreList/>
           </div>
         </div>
 

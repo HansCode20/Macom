@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { getGenreList } from "../../../utils/AnimeApi";
-import '../../../style/ButtonHover.css';
 import { useNavigate } from "react-router-dom";
 
 const GenreList = () => {
@@ -25,15 +24,15 @@ const GenreList = () => {
   }
 
   return (
-    <div className="p-10 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-5 mt-20">
+    <div className="flex flex-wrap gap-5 mt-20">
       {genreList &&
         genreList.map((anime) => (
-            <button 
-             id="Button-genres"
+            <button   
              key={anime.genreId}
              onClick={() => handleButtonId(anime.genreId)}
+             className="mb-5"
              >
-              <span>{anime.title}</span>
+              <span className="border border-gray-600 p-2 rounded-md text-gray-400">{anime.title}</span>
             </button>     
         ))}
     </div>

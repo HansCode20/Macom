@@ -32,7 +32,7 @@ const AnimeList = () => {
   if (loading) {
     return (
       <div className="loadingtext flex justify-center items-center h-screen">
-        <p>Loading..</p>
+        <p>Loading</p>
       </div>
     );
   }

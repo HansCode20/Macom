@@ -48,6 +48,7 @@ const RecentAnime = ({ recentAnime = [] }) => {
                 className="relative group "
                 onClick={() => handleRecentClick(anime.episodeId)}
               >
+
                 <div className="relative space-y-3 hover:scale-105 duration-300">
 
                   <div className="absolute top-0 p-1 bg-black/60 text-xs">

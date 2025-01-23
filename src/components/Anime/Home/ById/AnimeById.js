@@ -45,7 +45,7 @@ const AnimeById = () => {
   };
   
   return (
-    <div>
+    <div className="mt-20">
       {animeId ? (
        <div className="w-full">
        {/* Background Blur */}
@@ -94,7 +94,7 @@ const AnimeById = () => {
                     animeId.genreList.map((genre) => (
                       <span
                         key={genre.genreId}
-                        className="bg-blue-800 px-3 py-1 rounded-lg font-medium text-white"
+                        className="bg-[#433d8b] px-3 py-1 rounded-lg font-medium text-white"
                       >
                         {genre.title}
                       </span>

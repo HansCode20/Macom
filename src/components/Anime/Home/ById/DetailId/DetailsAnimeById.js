@@ -35,15 +35,15 @@ const DetailsAnimeById = ({
             </div>
             <div className="flex justify-between p-2 border-b border-gray-700">
               <span className="font-medium">English</span>
-              <span  className="max-w-xs truncate">{english || "Unknown"}</span>
+              <span  className="max-w-xs truncate md:text-wrap lg:text-wrap text-right">{english || "Unknown"}</span>
             </div>
             <div className="flex justify-between p-2 border-b border-gray-700">
               <span className="font-medium">Japanese</span>
-              <span  className="max-w-xs truncate">{japanese || "Unknown"}</span>
+              <span  className="max-w-xs truncate md:text-wrap lg:text-wrap text-right">{japanese || "Unknown"}</span>
             </div>
             <div className="flex justify-between p-2 border-b border-gray-700 ">
               <span className="font-medium ">Producers</span>
-              <span className="max-w-xs truncate">{producers || "Unknown"}</span>
+              <span className="max-w-xs truncate md:text-wrap lg:text-wrap text-right">{producers || "Unknown"}</span>
             </div>
           </div>
 
@@ -62,11 +62,11 @@ const DetailsAnimeById = ({
             </div>
             <div className="flex justify-between p-2 border-b border-gray-700">
               <span className="font-medium">Studios</span>
-              <span  className="max-w-xs truncate">{studios}</span>
+              <span  className="max-w-xs truncate md:text-wrap lg:text-wrap text-right">{studios}</span>
             </div>
             <div className="flex justify-between p-2 border-b border-gray-700">
               <span className="font-medium">Synonyms</span>
-              <span className="max-w-xs truncate">{synonyms || "Unknown"}</span>
+              <span className="max-w-xs truncate md:text-wrap lg:text-wrap text-right">{synonyms || "Unknown"}</span>
             </div>
             <div className="flex justify-between p-2 border-b border-gray-700">
               <span className="font-medium">Type</span>
