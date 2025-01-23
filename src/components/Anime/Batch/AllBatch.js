@@ -33,11 +33,11 @@ const AllBatch = () => {
 
   const handlePageChange = (newPage) => {
     setCurrentPage(newPage);
-    navigate(`/anime/daftar-batch/${newPage}`);
+    navigate(`/batch-list/${newPage}`);
   };
 
   const handleBatchById = (id) => {
-    navigate(`/anime/batch/${id}`);
+    navigate(`/${id}`);
   };
 
   if (loading) {

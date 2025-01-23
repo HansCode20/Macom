@@ -14,7 +14,7 @@ import { Navigation } from "swiper/modules";
 const MovieAnime = ({ movieAnime = [] }) => {
   const navigate = useNavigate();
   const handleMovieClick = (id) => {
-    navigate(`/anime/${id}`);
+    navigate(`/${id}`);
   }
 
   return (
@@ -44,8 +44,8 @@ const MovieAnime = ({ movieAnime = [] }) => {
               movieAnime.map((anime) => (
                 <SwiperSlide key={anime.episodeId}>
                   <div
-                    className="relative group "
-                    onClick={() => handleMovieClick(anime.episodeId)}
+                    className="relative group cursor-pointer"
+                    onClick={() => handleMovieClick(anime.animeId)}
                   >
                     <div className="relative space-y-3 hover:scale-105 duration-300">
     

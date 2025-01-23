@@ -27,59 +27,29 @@ const App = () => {
   return (
     <div className="flex flex-col min-h-screen">
       <BrowserRouter>
-        {/* Bagian konten utama */}
-        <div className="flex-grow lg:mt-0">
-          <Routes>
-            {/* Route untuk Home */}
-            <Route 
-              path="/*" 
-              element={
-              <>
-                <Navbar/>
-                
-                <Routes>
-                  <Route path="/" element={<Home />} />
-                </Routes>
-              </>
-              } />
-
-
-            {/* Route untuk Anime dengan Navigation dan Footer */}
-            <Route
-              path="/anime/*"
-              element={
-                <>
-                  {/* Navigation yang akan ditampilkan pada semua route anime */}
+                <div className="flex-grow">
                   <Navigation />
-
-                  {/* Nested Routes khusus untuk Anime */}
                   <Routes>
-                    <Route path="" element={<Anime />} />
-                    <Route path="search" element={<SearchResults />} />
-                    <Route path=":id" element={<AnimeById />} />
-                    <Route path="batch/:id" element={<BatchById />} />
-                    <Route path="movies" element={<AllMovies />} />
-                    <Route path="movies/:page" element={<AllMovies />} />
-                    <Route path="daftar-batch" element={<AllBatch />} />
-                    <Route path="daftar-batch/:page" element={<AllBatch />} />
-                    <Route path="anime-list" element={<AnimeList />} />
-                    <Route path="jadwalrilis" element={<Schedule />} />
-                    <Route path="on-going" element={<Ongoing />} />
-                    <Route path="on-going/:page" element={<Ongoing />} />
-                    <Route path="completed" element={<CompletedAnime />} />
-                    <Route path="completed/:page" element={<CompletedAnime />} />
-                    <Route path="genres" element={<GenreList />} />
-                    <Route path="genres/:id" element={<GenreListId />} />
-                    <Route path="genres/:id/:page" element={<GenreListId />} />
-                    <Route path="episode/:id" element={<EpisodeById/>} />
+                    <Route path="/" element={<Anime />} />
+                    <Route path="/search" element={<SearchResults />} />
+                    <Route path="/:id" element={<AnimeById />} />
+                    <Route path="/batch/:id" element={<BatchById />} />
+                    <Route path="/movies" element={<AllMovies />} />
+                    <Route path="/movies/:page" element={<AllMovies />} />
+                    <Route path="/batch-list" element={<AllBatch />} />
+                    <Route path="/batch-list/:page" element={<AllBatch />} />
+                    <Route path="/anime-list" element={<AnimeList />} />
+                    <Route path="/jadwalrilis" element={<Schedule />} />
+                    <Route path="/on-going" element={<Ongoing />} />
+                    <Route path="/on-going/:page" element={<Ongoing />} />
+                    <Route path="/completed" element={<CompletedAnime />} />
+                    <Route path="/completed/:page" element={<CompletedAnime />} />
+                    <Route path="/genres" element={<GenreList />} />
+                    <Route path="/genres/:id" element={<GenreListId />} />
+                    <Route path="/genres/:id/:page" element={<GenreListId />} />
+                    <Route path="/episode/:id" element={<EpisodeById/>} />
                   </Routes>
-                </>
-              }
-            />
-          </Routes>
-        </div>
-        
-        {/* Footer selalu berada di bawah */}
+                </div>
         <Footer />
       </BrowserRouter>
     </div>

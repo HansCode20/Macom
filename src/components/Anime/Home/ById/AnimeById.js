@@ -5,6 +5,7 @@ import DetailsAnimeById from "./DetailId/DetailsAnimeById";
 import TrailerById from "./DetailId/TrailerById";
 import EpisodesList from "./DetailId/EpisodesList";
 import { FaStar, FaStarHalfAlt, FaRegStar } from 'react-icons/fa';
+import '../../../../style/LoaderDetails.css';
 
 const AnimeById = () => {
   const { id, episodeId } = useParams();
@@ -139,7 +140,9 @@ const AnimeById = () => {
      </div>
      
       ) : (
-        <p className="flex justify-center items-center h-screen">Loading anime details...</p>
+        <div className="loadingtext flex justify-center items-center h-screen">
+          <p>Loading Anime Details</p>
+        </div>
       )}
     </div>
   );

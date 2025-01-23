@@ -20,7 +20,7 @@ const GenreList = () => {
   }, []);
 
   const handleButtonId = (genreId) => {
-    navigate(`/anime/genres/${genreId}`);
+    navigate(`/genres/${genreId}`);
   }
 
   return (
@@ -30,7 +30,7 @@ const GenreList = () => {
             <button   
              key={anime.genreId}
              onClick={() => handleButtonId(anime.genreId)}
-             className="mb-5"
+             className="mb-5 cursor-pointer"
              >
               <span className="border border-gray-600 p-2 rounded-md text-gray-400">{anime.title}</span>
             </button>     

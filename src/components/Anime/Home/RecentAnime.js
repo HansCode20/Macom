@@ -15,7 +15,7 @@ const RecentAnime = ({ recentAnime = [] }) => {
   const navigate = useNavigate();
 
   const handleRecentClick = (id) => {
-    navigate(`/anime/episode/${id}`);
+    navigate(`/episode/${id}`);
   };
 
   return (
@@ -45,7 +45,7 @@ const RecentAnime = ({ recentAnime = [] }) => {
           recentAnime.map((anime) => (
             <SwiperSlide key={anime.episodeId}>
               <div
-                className="relative group "
+                className="relative group cursor-pointer"
                 onClick={() => handleRecentClick(anime.episodeId)}
               >
 

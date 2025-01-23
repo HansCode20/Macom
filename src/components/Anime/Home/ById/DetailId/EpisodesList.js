@@ -1,11 +1,10 @@
 import React from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 const EpisodesList = ({ episodeLists }) => {
   const navigate = useNavigate();
-  const { id } = useParams();
 
   const handleEpisodeClick = (episodeId) => {
-    navigate(`/anime/episode/${episodeId}`);
+    navigate(`/episode/${episodeId}`);
   };
 
   return (

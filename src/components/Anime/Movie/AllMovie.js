@@ -36,7 +36,7 @@ const AllMovie = () => {
   };
 
   const handleMovieById = (id) => {
-    navigate(`/anime/${id}`);
+    navigate(`/${id}`);
   };
 
   if (loading) {

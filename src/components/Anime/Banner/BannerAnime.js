@@ -17,7 +17,7 @@ const BannerAnime = ({ BannerAnime = {} }) => {
   const navigate = useNavigate();
 
   const handleBannerClick = (id) => {
-    navigate(`/anime/${id}`);
+    navigate(`/${id}`);
   };
 
   return (

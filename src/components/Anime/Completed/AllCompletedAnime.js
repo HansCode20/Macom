@@ -35,12 +35,12 @@ const AllCompletedAnime = () => {
 
 
     const setHandlePageChange = (newPage) => {
-        navigate(`/anime/completed/${newPage}`)
+        navigate(`/completed/${newPage}`)
         setCurrentPage(newPage);
     };
 
     const handleAnimeById = (id) => {
-        navigate(`/anime/${id}`)
+        navigate(`/${id}`)
       };
     
 

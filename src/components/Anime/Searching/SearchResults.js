@@ -12,34 +12,38 @@ const SearchResults = () => {
   const query = searchParams.get("query");
   
   useEffect(() => {
-    if (query) {
-      const fetchSearchResults = async () => {
-        setLoading(true);
-        try {
-          const response = await getSearchAnime(query);
-          if (response.status === 404) {
-            setResults([]);
-          } else {
-            setResults(response.data.animeList);
-          }
-        } catch (error) {
-          if (error.response && error.response.status === 404) {
-            setResults([]);
-          } else {
-            console.error("Failed to fetch search results", error);
-          }
-        } finally {
-          setLoading(false);
-        }
-      };
-  
-      const timer = setTimeout(fetchSearchResults, 1000);
-      return () => clearTimeout(timer);
-    } else {
+    if (!query) {
+      // Jika tidak ada query, reset hasil dan status loading
       setResults([]);
       setLoading(false);
+      return;
     }
+
+    const fetchSearchResults = async () => {
+      setLoading(true); // Mulai loading sebelum fetch
+      try {
+        const response = await getSearchAnime(query); // Panggil API
+        const animeList = response?.data?.animeList || [];
+        setResults(animeList); // Update hasil
+      } catch (error) {
+        if (error.response?.status === 404) {
+          setResults([]); // Set kosong jika 404
+        } else {
+          console.error("Failed to fetch search results", error);
+        }
+      } finally {
+        setLoading(false); // Akhiri loading
+      }
+    };
+
+    // Debounce query dengan timer
+    const timer = setTimeout(fetchSearchResults, 1000);
+
+    // Membersihkan timer saat komponen di-unmount atau query berubah
+    return () => clearTimeout(timer);
   }, [query]);
+
+
   
   return (
     <div className='p-10'>
@@ -48,13 +52,13 @@ const SearchResults = () => {
           <p className='text-white text-md'>Searching...</p>
         </div>
       ) : (
-        <div className='grid grid-cols-2 lg:grid-cols-6 gap-6 mt-20'>
+        <div className='grid grid-cols-2 lg:grid-cols-6 gap-6 mt-20 cursor-pointer'>
           {results && results.length > 0 ? (
             results.map((anime) => (
               <div 
               key={anime.animeId} 
               className="relative overflow-hidden group cursor-pointer"
-              onClick={() => navigate(`/anime/${anime.animeId}`)}
+              onClick={() => navigate(`/${anime.animeId}`)}
             >
               <div className="relative space-y-3 hover:scale-105 duration-300">
                 <div className="absolute flex items-center gap-2 top-0 p-1 bg-black/70 text-sm group-hover:opacity-0">

@@ -5,11 +5,11 @@ const BatchAnime = ({ batchAnime = [] }) => {
   const navigate = useNavigate();
 
   const handleBatchClick = (id) => {
-    navigate(`/anime/batch/${id}`);
+    navigate(`/batch/${id}`);
   };
 
   return (
-      <div className="grid grid-cols-1 lg:grid-cols-5 md:grid-cols-3 gap-2 bg-[#222222]">
+      <div className="grid grid-cols-1 lg:grid-cols-5 md:grid-cols-3 gap-2 bg-[#222222] cursor-pointer">
         {batchAnime.length ? (
           batchAnime.map((anime) => (
             <div

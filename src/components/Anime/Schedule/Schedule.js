@@ -45,7 +45,7 @@ const Schedule = () => {
   };
 
   const handleAnimeById = (id) => {
-    navigate(`/anime/${id}`)
+    navigate(`/${id}`)
   }
 
   if (loading) {
@@ -57,7 +57,7 @@ const Schedule = () => {
   }
 
   return (
-    <div className="container mx-auto mt-10">
+    <div className="container mx-auto mt-10 cursor-pointer">
       <div className="flex flex-wrap justify-center space-x-2 gap-2">
         {schedule.map((animeday, dayIndex) => (
           <button 

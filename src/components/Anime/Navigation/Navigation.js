@@ -33,16 +33,16 @@ const Navigation = () => {
 
   const handleSearch = (searchQuery) => {
     if (searchQuery) {
-      navigate(`/anime/search?query=${searchQuery}`);
+      navigate(`/search?query=${searchQuery}`);
       setIsOpen(false);
     }
   };
 
   const CategoryTab = [
-    { category: "Home", link: "/anime" },
-    { category: "Anime List", link: "/anime/anime-list" },
-    { category: "On-going Anime", link: "/anime/on-going" },
-    { category: "Completed Anime", link: "/anime/completed" },
+    { category: "Home", link: "/" },
+    { category: "Anime List", link: "/anime-list" },
+    { category: "On-going Anime", link: "/on-going" },
+    { category: "Completed Anime", link: "/completed" },
   ];
 
   useEffect(() => {

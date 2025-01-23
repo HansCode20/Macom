@@ -26,7 +26,7 @@ const AnimeList = () => {
   }, []);
 
   const handleAnimeById = (id) => {
-    navigate(`/anime/${id}`)
+    navigate(`/${id}`);
   };
 
   if (loading) {
@@ -38,7 +38,7 @@ const AnimeList = () => {
   }
 
   return (
-    <div className="container mx-auto p-5 space-y-10 bg-black text-white mt-20">
+    <div className="container mx-auto p-5 space-y-10 bg-black text-white mt-28">
       {animeList.map((animegroup, groupIndex) => (
         <div key={groupIndex}>
           <h2 className="font-semibold text-3xl text-gray-100">

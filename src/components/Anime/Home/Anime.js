@@ -57,11 +57,11 @@ const Anime = () => {
   }
 
   const buttonMovieClick = () => {
-    navigate(`/anime/movies`);
+    navigate(`/movies`);
   };
 
   const buttonBatchClick = () => {
-    navigate(`/anime/daftar-batch`);
+    navigate(`/batch-list`);
   };
 
   return (

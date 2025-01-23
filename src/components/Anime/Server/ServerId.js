@@ -11,7 +11,7 @@ const ServerId = ({frameUrl, loadingFrm}) => {
         <iframe
           src={frameUrl}
           title="Video Player"
-          className="w-full h-64 md:h-96 lg:h-96 rounded-lg"
+          className="w-full aspect-video object-cover rounded-lg"
           allowFullScreen
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         ></iframe>

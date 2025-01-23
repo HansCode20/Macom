@@ -32,12 +32,12 @@ const AllOngoing = () => {
   }, [currentPage]);
 
   const handlePageChange = (newPage) => {
-    navigate(`/anime/on-going/${newPage}`);
+    navigate(`/on-going/${newPage}`);
     setCurrentPage(newPage);
   };
 
   const handleAnimeById = (id) => {
-    navigate(`/anime/${id}`)
+    navigate(`/${id}`);
   };
 
 

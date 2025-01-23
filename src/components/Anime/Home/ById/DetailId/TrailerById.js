@@ -7,7 +7,7 @@ const TrailerById = ({ trailers }) => {
         <div>
           <iframe
             loading='lazy'
-            className='w-full h-96 object-cover rounded-lg'
+            className='w-full aspect-video object-cover rounded-lg'
             src={trailers} // gunakan trailer langsung
             title="YouTube video player"
             frameBorder="0"

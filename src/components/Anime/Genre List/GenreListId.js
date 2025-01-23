@@ -35,8 +35,8 @@ const GenreListId = () => {
     setCurrentPage(newPage);
   };
 
-  const handleAnimeById = (id) => {
-    navigate(`/anime/${id}`);
+  const handleGenreById = (id) => {
+    navigate(`/${id}`);
   };
 
   if (loading) {
@@ -54,7 +54,7 @@ const GenreListId = () => {
           <div
             key={anime.animeId}
             className="relative overflow-hidden group cursor-pointer"
-            onClick={() => handleAnimeById(anime.animeId)}
+            onClick={() => handleGenreById(anime.animeId)}
           >
             <div className="relative space-y-3 hover:scale-105 duration-300">
               <div className="absolute flex items-center gap-2 top-0 p-1 bg-black/70 text-sm group-hover:opacity-0">

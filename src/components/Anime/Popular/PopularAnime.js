@@ -18,7 +18,7 @@ const PopularAnime = () => {
   const [popularAnime, setPopularAnime] = useState([]);
 
   const handlePopularClick = (id) => {
-    navigate(`/anime/${id}`);
+    navigate(`/${id}`);
   };
 
   const fetchPopularAnime = async () => {
@@ -26,7 +26,7 @@ const PopularAnime = () => {
       const response = await getPopularAnime();
       setPopularAnime(response.data.animeList);
     } catch (error) {
-      return error;
+      console.info(`${error}`);
     }
   };
 
@@ -61,7 +61,7 @@ const PopularAnime = () => {
           popularAnime.map((anime) => (
             <SwiperSlide key={anime.animeId}>
               <div
-                className="relative group "
+                className="relative group cursor-pointer"
                 onClick={() => handlePopularClick(anime.animeId)}
               >
                 <div className="relative space-y-3 hover:scale-105 duration-300">
