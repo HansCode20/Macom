@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { getAnimeHome } from "../../../utils/AnimeApi";
+import { getAnimeHome, getMovieAnime } from "../../../utils/AnimeApi";
 import BannerAnime from "../Banner/BannerAnime";
 import RecentAnime from "./RecentAnime";
 import MovieAnime from "../Movie/MovieAnime";
 import Schedule from "../Schedule/Schedule";
 import BatchAnime from "../Batch/BatchAnime";
-import "../../../style/LoaderDetails.css";
 import PopularAnime from "../Popular/PopularAnime";
 import GenreList from "../Genre List/GenreList";
+import "../../../style/LoaderDetails.css";
 
 const Anime = () => {
   const navigate = useNavigate();
@@ -19,12 +19,11 @@ const Anime = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  const fetchAnime = async () => {
+  const fetchAnimeHome = async () => {
     setLoading(true);
     setError(null);
     try {
       const response = await getAnimeHome();
-      setBannerAnime(response.data.movie.animeList); 
       setRecentAnime(response.data.recent.episodeList);
       setMovieAnime(response.data.movie.animeList);
       setBatchAnime(response.data.batch.batchList);
@@ -37,8 +36,26 @@ const Anime = () => {
   };
 
   useEffect(() => {
-    fetchAnime();
+    fetchAnimeHome();
   }, []);
+
+  const fetchMoviesAnime = async () => {
+    setLoading(true);
+    try {
+      const response = await getMovieAnime();
+      setBannerAnime(response.data.animeList);
+      setMovieAnime(response.data.animeList)
+    } catch (error) {
+      console.info(error);
+      setError('Failed to Load Movie Anime')
+    } finally {
+      setLoading(false)
+    }
+  };
+
+  useEffect(() => {
+    fetchMoviesAnime();
+  }, [])
 
   if (loading) {
     return (

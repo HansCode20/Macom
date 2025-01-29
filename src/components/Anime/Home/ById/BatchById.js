@@ -43,7 +43,7 @@ const AnimeById = () => {
   };
   
   return (
-    <div>
+    <div className="mt-20">
       {batchId ? (
        <div className="w-full">
        {/* Background Blur */}

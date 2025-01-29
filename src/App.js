@@ -2,8 +2,6 @@ import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 // Import Pages/Manga
-import Home from "./Pages/Home";
-import Navbar from "./components/Manga/Navigation/Navbar";
 
 
 // Import Anime Components
