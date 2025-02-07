@@ -24,7 +24,7 @@ const Anime = () => {
     setError(null);
     try {
       const response = await getAnimeHome();
-      setRecentAnime(response.data.recent.episodeList);
+      setRecentAnime(response.data.recent.animeList);
       setMovieAnime(response.data.movie.animeList);
       setBatchAnime(response.data.batch.batchList);
     } catch (error) {

@@ -46,7 +46,7 @@ const RecentAnime = ({ recentAnime = [] }) => {
             <SwiperSlide key={anime.episodeId}>
               <div
                 className="relative group cursor-pointer"
-                onClick={() => handleRecentClick(anime.episodeId)}
+                onClick={() => handleRecentClick(anime.animeId)}
               >
 
                 <div className="relative space-y-3 hover:scale-105 duration-300">
