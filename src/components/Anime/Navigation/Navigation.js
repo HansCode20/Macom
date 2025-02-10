@@ -19,7 +19,7 @@ const Navigation = () => {
       setActiveTab(savedActiveTab);
     } else {
       setActiveTab('Home');
-      navigate('/anime');
+      navigate('/');
     }
   }, [navigate])
 
@@ -27,7 +27,7 @@ const Navigation = () => {
     setActiveTab(category);
     localStorage.setItem('activeTab', category); // Simpan ke localStorage
     if (category === 'Home') {
-      navigate('/anime');
+      navigate('/');
     }
   };
 

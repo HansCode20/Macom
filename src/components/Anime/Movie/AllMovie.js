@@ -31,7 +31,7 @@ const AllMovie = () => {
   }, [currentPage]);
 
   const handlePageChange = (newPage) => {
-    navigate(`/anime/movies/${newPage}`);
+    navigate(`/movies/${newPage}`);
     setCurrentPage(newPage);
   };
 

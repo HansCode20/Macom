@@ -31,7 +31,7 @@ const GenreListId = () => {
   }, [id, currentPage]);
 
   const handlePageChange = (newPage) => {
-    navigate(`/anime/genres/${id}/${newPage}`);
+    navigate(`/genres/${id}/${newPage}`);
     setCurrentPage(newPage);
   };
 
