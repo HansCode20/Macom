@@ -14,7 +14,6 @@ const SearchResults = () => {
   useEffect(() => {
     console.log("Query dari URL:", query); // Cek apakah query masuk
     if (!query) {
-      setResults([]);
       setLoading(false);
       return;
   }
@@ -23,7 +22,7 @@ const SearchResults = () => {
       setLoading(true); // Mulai loading sebelum fetch
       try {
         const response = await getSearchAnime(query); // Panggil API
-        const animeList = response?.data?.animeList || [];
+        const animeList = response?.data?.animeList ;
         setResults(animeList); // Update hasil
       } catch (error) {
         if (error.response?.status === 404) {
@@ -43,10 +42,9 @@ const SearchResults = () => {
     return () => clearTimeout(timer);
   }, [query]);
 
-  const handleButtonId = (id) => {
-    navigate(`/anime/${id}`)
-  }
-
+  const handlebuttonClick = (id) => {
+    navigate(`/anime/${id}`);
+  };
 
   
   return (
@@ -62,7 +60,7 @@ const SearchResults = () => {
               <div 
               key={anime.animeId} 
               className="relative overflow-hidden group cursor-pointer"
-              onClick={handleButtonId}
+              onClick={() => handlebuttonClick(anime.animeId)}
             >
               <div className="relative space-y-3 hover:scale-105 duration-300">
                 <div className="absolute flex items-center gap-2 top-0 p-1 bg-black/70 text-sm group-hover:opacity-0">
