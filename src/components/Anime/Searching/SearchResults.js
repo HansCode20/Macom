@@ -12,12 +12,12 @@ const SearchResults = () => {
   const query = searchParams.get("query");
   
   useEffect(() => {
+    console.log("Query dari URL:", query); // Cek apakah query masuk
     if (!query) {
-      // Jika tidak ada query, reset hasil dan status loading
       setResults([]);
       setLoading(false);
       return;
-    }
+  }
 
     const fetchSearchResults = async () => {
       setLoading(true); // Mulai loading sebelum fetch
@@ -43,6 +43,10 @@ const SearchResults = () => {
     return () => clearTimeout(timer);
   }, [query]);
 
+  const handleButtonId = (id) => {
+    navigate(`/anime/${id}`)
+  }
+
 
   
   return (
@@ -58,7 +62,7 @@ const SearchResults = () => {
               <div 
               key={anime.animeId} 
               className="relative overflow-hidden group cursor-pointer"
-              onClick={() => navigate(`/${anime.animeId}`)}
+              onClick={handleButtonId}
             >
               <div className="relative space-y-3 hover:scale-105 duration-300">
                 <div className="absolute flex items-center gap-2 top-0 p-1 bg-black/70 text-sm group-hover:opacity-0">

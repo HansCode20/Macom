@@ -36,7 +36,7 @@ const GenreListId = () => {
   };
 
   const handleGenreById = (id) => {
-    navigate(`/${id}`);
+    navigate(`/anime/${id}`);
   };
 
   if (loading) {

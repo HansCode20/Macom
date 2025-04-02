@@ -45,7 +45,7 @@ const Schedule = () => {
   };
 
   const handleAnimeById = (id) => {
-    navigate(`/${id}`)
+    navigate(`/anime/${id}`)
   }
 
   if (loading) {

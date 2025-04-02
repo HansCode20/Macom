@@ -15,7 +15,7 @@ const RecentAnime = ({ recentAnime = [] }) => {
   const navigate = useNavigate();
 
   const handleRecentClick = (id) => {
-    navigate(`/episode/${id}`);
+    navigate(`/anime/${id}`);
   };
 
   return (

@@ -18,7 +18,7 @@ const PopularAnime = () => {
   const [popularAnime, setPopularAnime] = useState([]);
 
   const handlePopularClick = (id) => {
-    navigate(`/${id}`);
+    navigate(`/anime/${id}`);
   };
 
   const fetchPopularAnime = async () => {

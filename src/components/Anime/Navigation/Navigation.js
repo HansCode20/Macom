@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import Search from '../Searching/Search';
 import Logo from '../../NavLogo/Logo';
 import { IoMenu, IoClose } from 'react-icons/io5';
-import Search from '../Searching/Search';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,16 +12,6 @@ const Navigation = () => {
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
-
-  useEffect(() => {
-    const savedActiveTab = localStorage.getItem('activeTab');
-    if (savedActiveTab) {
-      setActiveTab(savedActiveTab);
-    } else {
-      setActiveTab('Home');
-      navigate('/');
-    }
-  }, [navigate])
 
   const activeTabHandler = (category) => {
     setActiveTab(category);
@@ -85,7 +75,8 @@ const Navigation = () => {
                   <Link
                   key={index}
                   to={item.link}
-                  className={`font-semibold  ${activeTab === item.category ? 'text-white' : 'text-gray-400'}`}
+                  className={`font-semibold  ${activeTab === item.category ? 'text-white' : 'text-gray-400'}`
+                  }
                   onClick={() => activeTabHandler(item.category)}
                   >
                   {item.category}

@@ -40,7 +40,7 @@ const AllCompletedAnime = () => {
     };
 
     const handleAnimeById = (id) => {
-        navigate(`/${id}`)
+        navigate(`/anime/${id}`)
       };
     
 

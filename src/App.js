@@ -1,9 +1,6 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
-// Import Pages/Manga
-
-
 // Import Anime Components
 import Anime from "./components/Anime/Home/Anime";
 import AnimeList from "./components/Anime/AnimeList/AnimeList";
@@ -28,9 +25,11 @@ const App = () => {
                 <div className="flex-grow">
                   <Navigation />
                   <Routes>
+
+                    {/* Animes Pages */}
                     <Route path="/" element={<Anime />} />
                     <Route path="/search" element={<SearchResults />} />
-                    <Route path="/:id" element={<AnimeById />} />
+                    <Route path="/anime/:id" element={<AnimeById />} />
                     <Route path="/batch/:id" element={<BatchById />} />
                     <Route path="/movies" element={<AllMovies />} />
                     <Route path="/movies/:page" element={<AllMovies />} />

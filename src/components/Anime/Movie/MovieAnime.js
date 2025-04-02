@@ -14,7 +14,7 @@ import { Navigation } from "swiper/modules";
 const MovieAnime = ({ movieAnime = [] }) => {
   const navigate = useNavigate();
   const handleMovieClick = (id) => {
-    navigate(`/${id}`);
+    navigate(`/anime/${id}`);
   }
 
   return (

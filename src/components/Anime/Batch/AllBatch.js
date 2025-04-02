@@ -37,7 +37,7 @@ const AllBatch = () => {
   };
 
   const handleBatchById = (id) => {
-    navigate(`/${id}`);
+    navigate(`/anime/${id}`);
   };
 
   if (loading) {
